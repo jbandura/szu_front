@@ -1,0 +1,19 @@
+<div class="form-group">
+  <label>Nazwa</label>
+  {{input type="text" value=model.course.name class="form-control"}}
+</div>
+<div class="form-group">
+  <label>Dzień tygodnia</label>
+  {{input type="text" value=model.course.weekday class="form-control"}}
+</div>
+<div class="form-group">
+  <label>Godziny:</label>
+  {{input type="text" value=model.course.time class="form-control"}}
+</div>
+<div class="form-group">
+  <label>Grupa:</label>
+  {{view 'select' content=model.groups selection=model.course.studentGroup optionValuePath="content.id" optionLabelPath="content.name" class="form-control"}}
+</div>
+<div class="form-group">
+  <button class="btn btn-primary" {{action 'save'}}>Zapisz</button>
+</div>

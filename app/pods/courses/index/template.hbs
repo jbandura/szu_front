@@ -1,0 +1,27 @@
+<h2>Zajęcia</h2>
+<p>
+  {{link-to 'Dodaj zajęcia' 'courses.new' class="btn btn-primary"}}
+</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Nazwa</th>
+      <th>Dzień tygodnia</th>
+      <th>Godzina</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |course|}}
+    <tr>
+      <td class="text-center"><i class="fa fa-calendar"></i></td>
+      <td>{{course.name}}</td>
+      <td>{{course.weekday}}</td>
+      <td>{{course.time}}</td>
+      <td>{{link-to 'Edytuj' 'courses.edit' course.id class="btn btn-default"}}</td>
+      <td><button class="btn btn-danger" {{action "delete" course}}>Usuń</button></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

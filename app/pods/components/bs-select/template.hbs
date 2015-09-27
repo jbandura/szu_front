@@ -1,0 +1,9 @@
+{{#if label}}
+<label for="Wybierz grupę">Wybierz zajęcia:</label>
+{{/if}}
+<select class="form-control" id="group-picker" {{ action "optionSelected" on="change"}}>
+  <option value="0">{{prompt}}</option>
+  {{#each options as |opt|}}
+  <option value="{{opt.value}}" selected="{{if opt.selected 'selected' null}}">{{opt.label}}</option>
+  {{/each}}
+</select>

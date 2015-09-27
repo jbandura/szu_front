@@ -1,0 +1,28 @@
+.site-header {
+  padding: 2em;
+  color: white;
+  background-color: $brand-secondary;
+  border-bottom: 5px solid #eee;
+}
+
+.site-nav {
+  
+  li {
+    cursor:pointer;
+    
+    &:hover {
+      a {
+        background-color: lighten($brand-secondary, 20%);
+      }
+    }
+  }
+
+  a {
+    color: white;
+
+    > i {
+      margin-right: 0.5em;
+      color: lighten($brand-secondary, 50%);
+    }
+  }
+}

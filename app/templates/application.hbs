@@ -1,0 +1,39 @@
+<div class="site-header">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">SZU</div>
+			<div class="col-md-9">
+				<ul class="nav nav-pills site-nav">
+					<li>
+            {{#link-to 'students.index'}}
+              <i class="fa fa-users"></i>
+              Uczestnicy
+            {{/link-to}}
+          </li>
+					<li>
+            {{#link-to 'student-groups.index'}}
+              <i class="fa fa-users"></i>
+              Grupy
+            {{/link-to}}
+          </li>
+					<li>
+            {{#link-to 'courses.index'}}
+              <i class="fa fa-calendar"></i>
+              Zajęcia
+            {{/link-to}}
+          </li>
+					<li>
+            {{#link-to 'presence-lists.index'}}
+              <i class="fa fa-book"></i>
+              Listy obecności
+            {{/link-to}}
+          </li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+  {{outlet}}
+</div>

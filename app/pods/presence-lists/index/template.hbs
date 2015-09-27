@@ -1,0 +1,30 @@
+<h2>Listy:</h2>
+
+<p>
+	{{link-to 'Nowa lista obecności' 'presence-lists.new' class="btn btn-primary"}}
+</p>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Zajęcia</th>
+      <th>Data</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+  {{#each model as |list|}}
+    <tr>
+      <td>{{list.course.name}}</td>
+      <td>{{list.date}}</td>
+      <td>
+        {{#link-to 'presence-lists.show' list.id}}
+          <button class="btn btn-default btn-sm">Zobacz</button>
+        {{/link-to}}
+      </td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
+
+

@@ -1,0 +1,5 @@
+<ul class="nav nav-tabs">
+	<li class="js-pages js-students"><a {{action "goToUsers"}}>Uczestnicy</a></li>
+	<li class="js-pages js-payments"><a {{action "goToPayments"}}>Płatności <span class="badge">{{overDuePaymentsCount}}</span></a></li>
+</ul>
+{{outlet}}

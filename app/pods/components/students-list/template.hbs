@@ -1,0 +1,68 @@
+{{log students}}
+<div class="row">
+	<div class="col-md-4">
+		{{input value=filter class="form-control"}}
+	</div>
+	<div class="col-md-3">
+		<div class="checkbox">
+			<label>
+				{{input type="checkbox" checked=terms}}
+				Bez oddanego regulaminu
+			</label>
+		</div>
+	</div>
+	<div class="col-md-3 form-inline">
+		<label>Grupa:</label>
+		<select {{action 'groupSelected' this on="change"}} class="form-control">
+			<option value="all">Wszystkie</option>
+			{{#each group in groups}}
+			<option value="{{group.id}}">{{group.name}}</option>
+			{{/each}}
+		</select>
+	</div>
+</div>
+
+<hr>
+
+{{#if hasFlashMessage}}
+<div class="alert alert-success">
+	{{flashMessage}}
+</div>
+{{/if}}
+
+<table class="table">
+	<thead>
+		<tr>
+			<th></th>
+			<th>Imię</th>
+			<th>Nazwisko</th>
+			<th>Nr telefonu</th>
+			<th>Wpłata</th>
+			<th>Oddany regulamin</th>
+			<th colspan="3"></th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each student in filteredStudents}}
+		<tr>
+			<td class="text-center"><i class="fa fa-user"></i></td>
+			<td>{{student.name}}</td>
+			<td>{{student.surname}}</td>
+			<td>{{student.phone_nr}}</td>
+			<td>
+				{{#if student.hasOverduePayments}}
+					Nie <button {{action 'addPayment' student}} class="btn btn-primary btn-xs">+</button>
+				{{else}}
+					Tak
+				{{/if}}
+			</td>
+			<td>{{#if student.acceptedTerms}}Tak{{else}}Nie <button {{action "addTermsAccepted" student}} class="btn btn-primary btn-xs">+</button>{{/if}}</td>
+			<td>{{link-to "Zobacz" 'students.show' student class="btn btn-primary btn-sm"}}</td>
+			<td>{{link-to "Edytuj" 'students.edit' student.id class="btn btn-default btn-sm"}}</td>
+			<td>
+				<button class="btn btn-danger btn-sm" {{action 'deleteStudent' student}}>Usuń</button>
+			</td>
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
