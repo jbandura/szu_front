@@ -32,9 +32,5 @@ export default Model.extend({
     return this.get('payments').find((payment) => {
       return payment.get('month_nr') === month_nr && payment.get('year_nr') === year_nr;
     });
-  }),
-
-  hasOverduePayments: computed("paymentCurrentMonth.paid", function() {
-    return !this.get('paymentCurrentMonth').get('paid');
   })
 });
