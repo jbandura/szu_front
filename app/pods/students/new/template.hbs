@@ -2,4 +2,9 @@
 
 <p>{{link-to 'Powrót' 'students.index' class="btn btn-default"}}</p>
 
-{{partial 'students/form'}}
+{{student-form
+  model=model.student
+  groups=model.groups
+  save="createStudent"
+  cancel="goBack"
+}}
