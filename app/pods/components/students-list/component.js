@@ -7,11 +7,7 @@ export default Component.extend(FilterableMixin, {
   students: [], //passed in
   groups: [], //passed in
   selectedGroup: 'all',
-  flashMessage: '',
   terms: false,
-  hasFlashMessage: computed("flashMessage", function () {
-    return this.get('flashMessage') !== '';
-  }),
   filteredStudents: computed("students.@each", "filter", "terms", "selectedGroup", function () {
     let students = this.get('students');
     let filter = this.get('filter');
@@ -38,9 +34,10 @@ export default Component.extend(FilterableMixin, {
 
   actions: {
     addTermsAccepted: function(student) {
+      let flashMessage = Ember.get(this, 'flashMessages');
       student.set('acceptedTerms', true);
       student.save().then(() => {
-        this.set('flashMessage', 'Pomyślnie dodano oddany regulamin!');
+        flashMessage.success('Pomyślnie dodano oddany regulamin!');
       });
     },
 
