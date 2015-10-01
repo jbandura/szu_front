@@ -19,7 +19,6 @@ export default Component.extend(FilterableMixin, {
     }
 
     if(filter) {
-      console.log('filter');
       students = this.filterByText(students, 'fullName');
     }
     if(terms) {
