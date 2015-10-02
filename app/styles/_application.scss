@@ -6,10 +6,10 @@
 }
 
 .site-nav {
-  
+
   li {
     cursor:pointer;
-    
+
     &:hover {
       a {
         background-color: lighten($brand-secondary, 20%);
@@ -25,4 +25,8 @@
       color: lighten($brand-secondary, 50%);
     }
   }
+}
+
+.side-nav {
+  margin-top: 25px;
 }

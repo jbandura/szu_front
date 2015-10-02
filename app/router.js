@@ -16,12 +16,12 @@ AppRouter.map(function(){
     this.resource('payments', function() {
       this.route('overdue');
     });
+    this.resource('groups', function() {
+      this.route('new');
+      this.route('edit', { path: ':student_group_id/edit' });
+    });
   });
 
-  this.resource('student-groups', function() {
-    this.route('new');
-    this.route('edit', { path: ':student_group_id/edit' });
-  });
 
   this.resource('courses', function() {
     this.route('new');

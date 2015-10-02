@@ -1,5 +1,12 @@
-<ul class="nav nav-tabs">
-	<li class="js-pages js-students"><a {{action "goToUsers"}}>Uczestnicy</a></li>
-	<li class="js-pages js-payments"><a {{action "goToPayments"}}>Płatności <span class="badge">{{overDuePaymentsCount}}</span></a></li>
-</ul>
-{{outlet}}
+<div class="row">
+	<div class="col-md-3">
+		<ul class="list-group side-nav">
+			{{link-to 'Students' 'students.index' tagName='li' class="list-group-item"}}
+			{{link-to 'Payments' 'payments.overdue' tagName='li' class="list-group-item"}}
+			{{link-to 'Groups' 'groups.index' tagName='li' class="list-group-item"}}
+		</ul>
+	</div>
+	<div class="col-md-9">
+		{{outlet}}
+	</div>
+</div>

@@ -3,7 +3,7 @@ import EmberValidations from 'ember-validations';
 
 const { Component, computed } = Ember;
 
-export default Component.extend(EmberValidations.Mixin, {
+export default Component.extend(EmberValidations, {
   model: null, //passed in
   groups: null, //passed in
   isButtonDisabled: computed.not('isValid'),
@@ -21,7 +21,7 @@ export default Component.extend(EmberValidations.Mixin, {
 
   actions: {
     save() {
-      this.sendAction('save', this.get('model'));  
+      this.sendAction('save', this.get('model'));
     },
     cancel() {
       this.sendAction('cancel');
