@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
-const { Component } = Ember;
+const { Component, computed } = Ember;
 
 export default Component.extend({
+  value: computed.oneWay('number')
 });
