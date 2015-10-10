@@ -6,7 +6,14 @@ const { Component, computed } = Ember;
 export default Component.extend(EmberValidations, {
   model: null, //passed in
   groups: null, //passed in
-  isButtonDisabled: computed.not('isValid'),
+  studentGroup: computed.alias('model.studentGroup'),
+  groupChosen: computed('model.studentGroup', function() {
+    return this.get('studentGroup');  
+  }),
+  isButtonDisabled: computed('isValid', 'groupChosen', function() {
+    return !this.get('isValid') || !this.get('groupChosen');
+  }),
+
   validations: {
     "model.name": {
       presence: true
@@ -14,7 +21,7 @@ export default Component.extend(EmberValidations, {
     "model.surname": {
       presence: true
     },
-    "model.groups": {
+    "model.studentGroup": {
       presence: true
     }
   },

@@ -1,5 +1,4 @@
 {{#em-form model=this submit_button=false}}
-  {{log isValid}}
   <div class="row">
     <div class="col-md-6 form-group">
       {{em-input
@@ -17,14 +16,16 @@
   <div class="form-group">
     <div class="row">
       <div class="col-md-6">
-        {{em-select
-          property="model.groups"
+        {{neo-select
           label="Group"
-          prompt="-- select --"
-          content=groups
-          optionValuePath="content.id"
-          optionLabelPath="content.name"
-        }}
+    		  collection=groups
+    			property=model.studentGroup
+          propertyName="model.studentGroup"
+    			valuePath="id"
+    			labelPath="name"
+          validations="required"
+          valid=groupChosen
+    		}}
       </div>
       <div class="col-md-6">
         {{em-tel-input
