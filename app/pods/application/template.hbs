@@ -4,18 +4,14 @@
 			<div class="col-md-3">SZU</div>
 			<div class="col-md-offset-6 col-md-3">
 				<ul class="nav nav-pills site-nav text-right">
-					<li>
-            {{#link-to 'students.index'}}
-              <i class="fa fa-users"></i>
-              Uczestnicy
-            {{/link-to}}
-          </li>
-					<li>
-            {{#link-to 'courses.index'}}
-              <i class="fa fa-calendar"></i>
-              Zajęcia
-            {{/link-to}}
-          </li>
+          {{#link-to 'students.index' tagName="li"}}
+            <i class="fa fa-users"></i>
+            Uczestnicy
+          {{/link-to}}
+          {{#link-to 'courses.index' tagName="li"}}
+            <i class="fa fa-calendar"></i>
+            Zajęcia
+          {{/link-to}}
 				</ul>
 			</div>
 		</div>
