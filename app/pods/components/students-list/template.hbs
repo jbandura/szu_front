@@ -13,7 +13,7 @@
 	</div>
 	<div class="col-md-3 form-inline">
 		<label>Grupa:</label>
-		<select {{action 'groupSelected' this on="change"}} class="form-control">
+		<select onchange={{action 'groupSelected' value="target.value"}} class="form-control">
 			<option value="all">Wszystkie</option>
 			{{#each group in groups}}
 			<option value="{{group.id}}">{{group.name}}</option>
