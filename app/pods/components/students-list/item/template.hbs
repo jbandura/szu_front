@@ -1,0 +1,17 @@
+<td class="text-center"><i class="fa fa-user"></i></td>
+<td>{{student.name}}</td>
+<td>{{student.surname}}</td>
+<td>{{student.phone_nr}}</td>
+<td>
+  {{#unless student.paymentCurrentMonth.paid}}
+    Nie <button {{action 'addPayment' student}} class="btn btn-primary btn-xs">+</button>
+  {{else}}
+    Tak
+  {{/unless}}
+</td>
+<td>{{#if student.acceptedTerms}}Tak{{else}}Nie <button {{action "addTermsAccepted" student}} class="btn btn-primary btn-xs">+</button>{{/if}}</td>
+<td>{{link-to "Zobacz" 'students.show' student class="btn btn-primary btn-sm"}}</td>
+<td>{{link-to "Edytuj" 'students.edit' student.id class="btn btn-default btn-sm"}}</td>
+<td>
+  <button class="btn btn-danger btn-sm" {{action 'deleteStudent' student}}>Usuń</button>
+</td>

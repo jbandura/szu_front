@@ -3,4 +3,10 @@
 <p>
 	{{link-to 'Dodaj nowego uczestnika' 'students.new' class="btn btn-primary"}}
 </p>
-{{students-list students=model.students groups=model.groups}}
+{{students-list/list
+	students=model.students
+	groups=model.groups
+	addPayment=(action "addPayment")
+	addTermsAccepted=(action "addTermsAccepted")
+	deleteStudent=(action "deleteStudent")
+}}
