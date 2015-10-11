@@ -1,0 +1,13 @@
+<div class="form-group {{if valid 'has-success' 'has-error'}}">
+  <label class="control-label">{{attrs.label}}</label>
+  <div>
+    <div class="btn-group" role="group">
+      {{#each weekdays as |weekday|}}
+        <button type="button" class="btn {{if (eq weekday property) 'btn-primary' 'btn-default'}}" onclick={{action "weekdaySelected" value="target"}}>{{weekday}}</button>
+      {{/each}}
+      {{#unless valid}}
+        <span class="help-block">value must be selected</span>
+      {{/unless}}
+    </div>
+  </div>
+</div>
