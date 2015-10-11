@@ -8,9 +8,22 @@ export default Route.extend({
   },
 
   deactivate() {
-    let model = this.modelFor('student-groups/new');
+    let model = this.modelFor('groups/new');
     if ( model.get('isNew') ){
       model.destroyRecord();
+    }
+  },
+
+  actions: {
+    addGroup(model) {
+      const flashMessages = Ember.get(this, 'flashMessages');
+      model.save().then(() => {
+        this.transitionTo('groups.index');
+        flashMessages.success('Group was saved successfully!');
+      });
+    },
+    goBack() {
+      this.transitionTo('groups.index');
     }
   }
 });
