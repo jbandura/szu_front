@@ -1,0 +1,14 @@
+<p><b>Present:</b></p>
+
+{{#each present as |presence|}}
+<p>{{presence.student.fullName}}</p>
+{{/each}}
+
+<hr />
+
+<p>
+  <b>Absent:</b>
+  {{#each absent as |presence|}}
+  <p>{{presence.student.fullName}}</p>
+  {{/each}}
+</p>
