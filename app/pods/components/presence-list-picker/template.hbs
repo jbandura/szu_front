@@ -1,23 +1,27 @@
-<div class="form-group">
-  <label for="date">Data:</label>
-  {{bootstrap-datepicker value=list.date placeholder="Click to play" class="form-control"}}
-</div>
-<div class="form-group">
-  {{neo-select
-    label="Group"
-    collection=courses
-    property=list.course
-    valuePath="id"
-    labelPath="name"
-    validations="required"
-    valid=courseChosen
-  }}
+<div class="row">
+  <div class="col-md-3">
+    <div class="form-group">
+      <label for="date">Data:</label>
+      {{pikaday-input value=list.date class="form-control"}}
+    </div>
+  </div>
+  <div class="col-md-9">
+    <div class="form-group">
+      {{neo-select
+        label="Group"
+        collection=courses
+        property=list.course
+        valuePath="id"
+        labelPath="name"
+        validations="required"
+        valid=courseChosen
+      }}
+    </div>
+  </div>
 </div>
 
 <table class="table table-bordered js-students-list">
-  <tbody>
-    {{presence-list-items model=filteredStudents}}
-  </tbody>
+  {{presence-list-items model=filteredStudents}}
 </table>
 <div class="form-group">
   <button class="btn btn-primary" {{action "saveList"}}>Zapisz</button>

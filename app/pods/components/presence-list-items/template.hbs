@@ -1,10 +1,14 @@
 {{#each model as |presence|}}
-<tr>
-  <td>{{input type="checkbox" checked=presence.isPresent}}</td>
-  <td>{{presence.student.fullName}}</td>
-</tr>
+  <tr>
+    <td>
+      <label class="form-label">
+        {{input type="checkbox" checked=presence.isPresent}}
+        {{presence.student.fullName}}
+      </label>
+    </td>
+  </tr>
 {{else}}
-<tr>
-  <td colspan="2">Proszę wybierz grupę</td>
-</tr>
+  <tr>
+    <td colspan="2" class="alert alert-info">Proszę wybierz grupę</td>
+  </tr>
 {{/each}}
