@@ -1,15 +1,18 @@
 <h2>Uczestnik: {{model.name}} {{model.surname}}</h2>
 <p>
-	{{link-to 'Powrót' 'students.index' class="btn btn-default"}}
-	{{link-to 'Edytuj' 'students.edit' model class='btn btn-primary'}}
+	{{link-to 'Back' 'students.index' class="btn btn-default"}}
+	{{link-to 'Edit' 'students.edit' model.id class='btn btn-primary'}}
 </p>
 
 <div class="panel panel-default">
 	<div class="panel-heading">
-		Szczegóły uczestnika
+		Student details
 	</div>
 	<div class="panel-body">
-		<p><b>Telefon:</b> {{model.phone_nr}}</p>
-		<p><b>Adres:</b> {{model.address}}</p>
+		<p><b>Phone Nr:</b> {{model.phone_nr}}</p>
+		<p><b>Address:</b> {{model.address}}</p>
+		<p>
+			<b>Group:</b> {{model.studentGroup.name}}
+		</p>
 	</div>
 </div>
