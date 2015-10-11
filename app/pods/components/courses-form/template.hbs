@@ -1,19 +1,34 @@
+{{#em-form model=this submit_button=false}}
 <div class="form-group">
-  <label>Nazwa</label>
-  {{input type="text" value=course.name class="form-control"}}
+  {{em-input
+    property="course.name"
+    label="Name"
+  }}
 </div>
 <div class="form-group">
-  <label>Dzień tygodnia</label>
-  {{input type="text" value=course.weekday class="form-control"}}
+  {{em-input
+    property="course.weekday"
+    label="Weekday"
+  }}
 </div>
 <div class="form-group">
-  <label>Godziny:</label>
-  {{input type="text" value=course.time class="form-control"}}
+  {{em-input
+    property="course.time"
+    label="Course hours"
+  }}
 </div>
 <div class="form-group">
-  <label>Grupa:</label>
-  {{view 'select' content=groups selection=course.studentGroup optionValuePath="content.id" optionLabelPath="content.name" class="form-control"}}
+  {{neo-select
+    collection=groups
+    property=course.studentGroup
+    valuePath="id"
+    labelPath="name"
+    label="Group"
+    validations="required"
+    valid=groupChosen
+  }}
 </div>
 <div class="form-group">
-  <button class="btn btn-primary" {{action 'save'}}>Zapisz</button>
+  <button {{action 'save'}} class="btn btn-primary" disabled={{isButtonDisabled}}>Zapisz</button>
 </div>
+{{/em-form}}
