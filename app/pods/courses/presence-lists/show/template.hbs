@@ -1,7 +1,5 @@
 <h2>Lista obecności</h2>
 
-<p>Obecni:</p>
-
-{{#each presences as |presence|}}
-<p>asd: {{presence.id}}</p>
-{{/each}}
+{{presence-list
+  presences=model.positions
+}}
