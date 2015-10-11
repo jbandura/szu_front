@@ -5,17 +5,20 @@
     label="Name"
   }}
 </div>
-<div class="form-group">
-  {{em-input
-    property="course.weekday"
-    label="Weekday"
-  }}
-</div>
-<div class="form-group">
-  {{em-input
-    property="course.time"
-    label="Course hours"
-  }}
+<div class="row">
+  <div class="col-md-4 form-group">
+    {{weekday-select
+      label="Weekday"
+      property=(mut course.weekday)
+    }}
+  </div>
+  <div class="col-md-3 form-group">
+    {{time-input
+      property=(mut course.time)
+      label="Course hours"
+      valid=timeChosen
+    }}
+  </div>
 </div>
 <div class="form-group">
   {{neo-select

@@ -17,9 +17,6 @@ export default Component.extend(EmberValidations, {
     "course.name": {
       presence: true
     },
-    "course.weekday": {
-      presence: true
-    },
     "course.time": {
       presence: true
     }
