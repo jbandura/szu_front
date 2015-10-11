@@ -1,1 +1,11 @@
-{{outlet}}
+<div class="row">
+	<div class="col-md-3">
+		<ul class="list-group side-nav">
+			{{link-to 'Courses' 'courses.index' tagName='li' class="list-group-item"}}
+			{{link-to 'Presence Lists' 'courses.presence-lists.index' tagName='li' class="list-group-item"}}
+		</ul>
+	</div>
+	<div class="col-md-9">
+		{{outlet}}
+	</div>
+</div>

@@ -23,18 +23,15 @@ AppRouter.map(function(){
   });
 
 
-  this.resource('courses', function() {
+  this.route('courses', function() {
     this.route('new');
     this.route('edit', { path: ':course_id/edit' });
-  });
 
-  this.route('courses/new');
-  this.route('courses/edit');
-
-  this.resource('presence-lists', function() {
-    this.route('new');
-    this.route('show', { path: ':presence_list_id' }, function() {
-      this.route('presences');
+    this.route('presence-lists', function() {
+      this.route('new');
+      this.route('show', { path: ':presence_list_id' }, function() {
+        this.route('presences');
+      });
     });
   });
 });

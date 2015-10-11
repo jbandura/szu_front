@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import FilterableMixin from '../../../mixins/filterable';
+import FilterableMixin from 'szu-front/mixins/filterable';
 
 const { Component, computed } = Ember;
 
@@ -37,17 +37,6 @@ export default Component.extend(FilterableMixin, {
   }),
 
   actions: {
-    courseSelected: function(course_id) {
-      let course = this.get('courses').findBy('id', course_id.toString());
-      this.set('list.course', course);
-      if(course_id === "0"){
-        this.$('.js-students-list').addClass('hide');
-      } else {
-        this.$('.js-students-list').removeClass('hide');
-      }
-      this.set('groupId', course_id);
-    },
-
     saveList: function() {
       this.sendAction('saveList', {
         students: this.get('filteredStudents'),

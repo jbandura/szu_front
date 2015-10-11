@@ -3,12 +3,14 @@
   {{bootstrap-datepicker value=list.date placeholder="Click to play" class="form-control"}}
 </div>
 <div class="form-group">
-  {{bs-select
-    label="Wybierz grupę"
-    collection=options
-    value="list.course"
-    prompt="--kurs--"
-    optionChosen="courseSelected"
+  {{neo-select
+    label="Group"
+    collection=courses
+    property=list.course
+    valuePath="id"
+    labelPath="name"
+    validations="required"
+    valid=courseChosen
   }}
 </div>
 
