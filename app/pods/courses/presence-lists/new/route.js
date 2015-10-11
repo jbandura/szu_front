@@ -7,15 +7,16 @@ export default Route.extend({
     return RSVP.hash({
       groups: this.store.findAll('student-group'),
       students: this.store.findAll('student'),
-      courses: this.store.findAll('course')
+      courses: this.store.findAll('course'),
+      list: this.store.createRecord('presence-list', { course: null })
     });
   },
 
-  setupController(controller, models) {
-    this._super(controller, models);
-    controller.set('presenceList', this.store.createRecord('presence-list', {
-      course: null
-    }));
+  deactivate() {
+    let model = this.modelFor('courses/presence-lists/new').list;
+    if(model.get('isNew')) {
+      model.destroyRecord();
+    }
   },
 
   actions: {
