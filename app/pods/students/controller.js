@@ -18,7 +18,7 @@ export default Controller.extend({
       this.setCurrentPage('students');
     },
     goToPayments() {
-      this.transitionToRoute('payments.overdue');
+      this.transitionToRoute('students.paymentsoverdue');
       this.setCurrentPage('payments');
     }
   }

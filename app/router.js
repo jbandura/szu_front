@@ -9,14 +9,14 @@ let AppRouter = Router.extend({
 
 AppRouter.map(function(){
 
-  this.resource('students', function() {
+  this.route('students', function() {
     this.route('new');
     this.route('show', { path: ':student_id' });
     this.route('edit', { path: ':student_id/edit' });
-    this.resource('payments', function() {
+    this.route('payments', function() {
       this.route('overdue');
     });
-    this.resource('groups', function() {
+    this.route('groups', function() {
       this.route('new');
       this.route('edit', { path: ':student_group_id/edit' });
     });
