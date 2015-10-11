@@ -1,9 +1,9 @@
 import Ember from 'ember';
-import FilterableMixin from '../../../mixins/filterable';
+import FilterableMixin from '../../../../mixins/filterable';
 
-const { Controller, computed } = Ember;
+const { Component, computed } = Ember;
 
-export default Controller.extend(FilterableMixin, {
+export default Component.extend(FilterableMixin, {
   changedPayment: false,
   filteredPayments: computed('filter', 'changedPayment', function() {
     let payments = this.get('model');
@@ -15,7 +15,7 @@ export default Controller.extend(FilterableMixin, {
     if(changedPayment) {
       return payments = this.filterByProperty(payments, 'paid', false);
     }
-    payments = this.filterByText(payments, 'student.fullName');
+    return this.filterByText(payments, 'student.fullName');
   }),
 
   actions: {

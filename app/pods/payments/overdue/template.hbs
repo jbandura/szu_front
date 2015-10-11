@@ -1,25 +1,5 @@
-<h2>Zaległe płatności</h2>
+<h2>Overdue payments</h2>
 
-{{input value=filter class="form-control"}}
-
-<hr>
-
-<table class="table table-bordered">
-<thead>
-	<tr>
-		<th>Uczestnik</th>
-		<th>Miesiąc i rok</th>
-		<th colspan="2"></th>
-	</tr>
-</thead>
-<tbody>
-	{{#each payment in filteredPayments}}
-		<tr>
-			<td>{{payment.student.fullName}}</td>
-			<td>{{payment.date}}</td>
-			<td><button class="btn btn-primary" {{action "addPayment" payment}}>Dodaj</button></td>
-			<td><button class="btn btn-danger" {{action "deletePayment" payment}}>Usuń</button></td>
-		</tr>
-	{{/each}}
-</tbody>
-</table>
+{{payments-list/list
+  model=model
+}}
