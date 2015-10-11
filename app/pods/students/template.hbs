@@ -2,7 +2,12 @@
 	<div class="col-md-3">
 		<ul class="list-group side-nav">
 			{{link-to 'Students' 'students.index' tagName='li' class="list-group-item"}}
-			{{link-to 'Payments' 'payments.overdue' tagName='li' class="list-group-item"}}
+			{{#link-to 'payments.overdue' tagName='li' class="list-group-item"}}
+		    Payments
+			  {{#if overduePaymentsCount}}
+				  <span class="badge">{{overduePaymentsCount}}</span>
+				{{/if}}
+			{{/link-to}}
 			{{link-to 'Groups' 'groups.index' tagName='li' class="list-group-item"}}
 		</ul>
 	</div>

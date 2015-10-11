@@ -3,7 +3,7 @@ import Ember from 'ember';
 const { Controller, computed, $ } = Ember;
 
 export default Controller.extend({
-  overDuePaymentsCount: computed('model.@each.paid', function() {
+  overduePaymentsCount: computed('model.@each.paid', function() {
     return this.get('model.length');
   }),
 
