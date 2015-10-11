@@ -12,12 +12,12 @@
 </thead>
 <tbody>
 	{{#each payment in filteredPayments}}
-		<tr>
-			<td>{{payment.student.fullName}}</td>
-			<td>{{payment.date}}</td>
-			<td><button class="btn btn-primary" {{action "addPayment" payment}}>Dodaj</button></td>
-			<td><button class="btn btn-danger" {{action "deletePayment" payment}}>Usuń</button></td>
-		</tr>
+		{{payments-list/item
+			model=payment
+			addPayment=attrs.addPayment
+			deletePayment=attrs.deletePayment
+			paymentAdded="paymentAdded"
+		}}
 	{{/each}}
 </tbody>
 </table>

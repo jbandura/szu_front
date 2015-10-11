@@ -19,14 +19,8 @@ export default Component.extend(FilterableMixin, {
   }),
 
   actions: {
-    addPayment: function(payment) {
-      payment.set("paid", true);
-      payment.save().then(() => {
-        this.set('changedPayment', true);
-      });
-    },
-    deletePayment: function() {
-      console.log('deleting');
+    paymentAdded() {
+      this.set('changedPayment', true);
     }
   }
 });
