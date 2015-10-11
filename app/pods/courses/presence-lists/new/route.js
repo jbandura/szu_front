@@ -33,6 +33,7 @@ export default Route.extend({
           );
         });
         return RSVP.all(promises).then(() => {
+          this.transitionTo('courses.presence-lists.index');
           flashMessages.success('Pomyślnie zapisano listę');
         });
       });
