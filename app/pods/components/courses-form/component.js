@@ -27,7 +27,6 @@ export default Component.extend(EmberValidations, {
 
   actions: {
     save: function() {
-      console.log('saving...');
       this.sendAction('action', this.get('course'));
     }
   }

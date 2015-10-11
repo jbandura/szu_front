@@ -26,7 +26,6 @@ export default Route.extend({
 
   actions: {
     saveCourse: function(course) {
-      console.log(course);
       course.save().then(() => {
         this.transitionTo('courses.index');
       });
