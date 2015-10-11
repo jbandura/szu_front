@@ -8,5 +8,13 @@ export default Route.extend({
       course: this.store.find('course', params.course_id),
       groups: this.store.findAll('student-group')
     });
+  },
+
+  actions: {
+    saveCourse: function(course) {
+      course.save().then(() => {
+        this.transitionTo('courses.index');
+      });
+    }
   }
 });
