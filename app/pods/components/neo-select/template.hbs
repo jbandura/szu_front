@@ -2,7 +2,7 @@
   {{#if label}}
     <label class="control-label">{{label}}</label>
   {{/if}}
-  <select onchange={{action "setProperty" value="target.value"}} class="form-control">
+  <select onchange={{action "setProperty" value="target.value"}} class="form-control" disabled={{disabled}}>
     <option value="0">{{prompt}}</option>
     {{#each collection as |item|}}
       <option
