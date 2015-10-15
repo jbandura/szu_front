@@ -1,5 +1,10 @@
 <h2>Lista obecności</h2>
 
+<p>
+  {{link-to "Back" "courses.presence-lists.index" class="btn btn-default"}}
+  {{link-to "Edit" "courses.presence-lists.edit" model.list.id class="btn btn-default"}}
+</p>
+
 {{presence-list
   list=model.list
 }}

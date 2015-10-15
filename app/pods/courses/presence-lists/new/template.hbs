@@ -1,2 +1,6 @@
 <h2>Nowa lista obecności:</h2>
+<p>
+  {{link-to "Back" "courses.presence-lists.index" class="btn btn-default"}}
+</p>
+
 {{presence-list-picker students=model.students list=model.list courses=model.courses saveList="savePresences"}}
