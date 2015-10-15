@@ -32,6 +32,7 @@ AppRouter.map(function(){
       this.route('show', { path: ':presence_list_id' }, function() {
         this.route('presences');
       });
+      this.route('edit', { path: ':presence_list_id/edit' });
     });
   });
 });
