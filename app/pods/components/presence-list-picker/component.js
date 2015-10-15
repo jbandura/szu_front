@@ -9,6 +9,8 @@ export default Component.extend(FilterableMixin, {
   list: null, //passed in
   groupId: null,
 
+  isCourseSelectBlocked: computed.not('list.isNew'),
+  
   options: computed('courses', function() {
     this.get('courses').map((course) => {
       return {
@@ -19,6 +21,11 @@ export default Component.extend(FilterableMixin, {
   }),
 
   filteredStudents: computed('list.course', function() {
+
+    if(!this.get('list.isNew')) {
+      return this.get('list.presences');
+    }
+
     let students = this.filterByProperty(
       this.students,
       'studentGroup.id',
