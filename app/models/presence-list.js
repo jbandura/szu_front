@@ -8,8 +8,12 @@ export default Model.extend({
   date: attr('date'),
   course: belongsTo('course', { async: true }),
   presences: hasMany('presence', { async: true }),
-  
-  numPresences: computed('presences', function() {
-    return this.get('presences.length');
+
+  presentStudents: computed('presences', function() {
+    return this.get('presences').filterBy('isPresent');
+  }),
+
+  absentStudents: computed('presences', function() {
+    return this.get('presences').filterBy('isPresent', false);
   })
 });

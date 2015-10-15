@@ -9,6 +9,7 @@
     <tr>
       <th>Zajęcia</th>
       <th>Data</th>
+			<th>Present / Absent </th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,7 +17,10 @@
   {{#each model as |list|}}
     <tr>
       <td>{{list.course.name}}</td>
-      <td>{{list.date}}</td>
+      <td>{{format-date list.date}}</td>
+			<td>
+				{{list.presentStudents.length}} / {{list.absentStudents.length}}
+			</td>
       <td>
         {{#link-to 'courses.presence-lists.show' list.id}}
           <button class="btn btn-default btn-sm">Zobacz</button>

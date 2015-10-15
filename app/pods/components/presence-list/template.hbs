@@ -1,6 +1,6 @@
 <p><b>Present:</b></p>
 
-{{#each present as |presence|}}
+{{#each list.presentStudents as |presence|}}
 <p>{{presence.student.fullName}}</p>
 {{/each}}
 
@@ -8,7 +8,9 @@
 
 <p>
   <b>Absent:</b>
-  {{#each absent as |presence|}}
+  {{#each list.absentStudents as |presence|}}
   <p>{{presence.student.fullName}}</p>
+  {{else}}
+    <div class="alert alert-info">No absent students.</div>
   {{/each}}
 </p>
