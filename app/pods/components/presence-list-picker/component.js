@@ -8,9 +8,24 @@ export default Component.extend(FilterableMixin, {
   students: null, //passed in
   list: null, //passed in
   groupId: null,
+  courseChosen: false,
+  anyStudentChosen: computed('filteredStudents.@each.isPresent', function(){
+    let filteredStudents = this.get('filteredStudents');
+    if(!filteredStudents) {
+      return false;
+    }
+    return filteredStudents.any((student) => {
+      return student.isPresent;
+    });
+  }),
 
   isCourseSelectBlocked: computed.not('list.isNew'),
-  
+  isSubmitDisabled: computed('courseChosen', 'anyStudentChosen', 'list.date', function() {
+    return !this.get('courseChosen') ||
+      !this.get('anyStudentChosen') ||
+      !this.get('list.date');
+  }),
+
   options: computed('courses', function() {
     this.get('courses').map((course) => {
       return {

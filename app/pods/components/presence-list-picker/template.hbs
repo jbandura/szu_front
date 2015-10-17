@@ -25,5 +25,5 @@
   {{presence-list-items model=filteredStudents}}
 </table>
 <div class="form-group">
-  <button class="btn btn-primary" {{action "saveList"}}>Zapisz</button>
+  <button class="btn btn-primary" {{action "saveList"}} disabled={{isSubmitDisabled}}>Zapisz</button>
 </div>
