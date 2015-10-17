@@ -8,8 +8,10 @@ export default Component.extend(FilterableMixin, {
   students: null, //passed in
   list: null, //passed in
   groupId: null,
-  courseChosen: false,
-  
+  courseChosen: computed('list.course', function() {
+    return this.get('list.course');
+  }),
+
   isCourseSelectBlocked: computed.not('list.isNew'),
 
   anyStudentChosen: computed('filteredStudents.@each.isPresent', function(){
@@ -18,7 +20,7 @@ export default Component.extend(FilterableMixin, {
       return false;
     }
     return filteredStudents.any((student) => {
-      return student.isPresent;
+      return student.get('isPresent');
     });
   }),
 
@@ -41,11 +43,11 @@ export default Component.extend(FilterableMixin, {
     );
     let presences = [];
     students.forEach((student) => {
-      presences.push({
+      presences.push(Ember.Object.create({
         student: student,
         presenceList: null,
         isPresent: false
-      });
+      }));
     });
 
     return presences;
