@@ -9,6 +9,9 @@ export default Component.extend(FilterableMixin, {
   list: null, //passed in
   groupId: null,
   courseChosen: false,
+  
+  isCourseSelectBlocked: computed.not('list.isNew'),
+
   anyStudentChosen: computed('filteredStudents.@each.isPresent', function(){
     let filteredStudents = this.get('filteredStudents');
     if(!filteredStudents) {
@@ -19,20 +22,10 @@ export default Component.extend(FilterableMixin, {
     });
   }),
 
-  isCourseSelectBlocked: computed.not('list.isNew'),
   isSubmitDisabled: computed('courseChosen', 'anyStudentChosen', 'list.date', function() {
     return !this.get('courseChosen') ||
       !this.get('anyStudentChosen') ||
       !this.get('list.date');
-  }),
-
-  options: computed('courses', function() {
-    this.get('courses').map((course) => {
-      return {
-        label: course.get('name'),
-        value: course.get('id')
-      };
-    });
   }),
 
   filteredStudents: computed('list.course', function() {
