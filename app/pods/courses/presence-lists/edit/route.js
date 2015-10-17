@@ -10,5 +10,25 @@ export default Route.extend({
       students: this.store.findAll('student'),
       courses: this.store.findAll('course'),
     });
+  },
+
+  actions: {
+    savePresences(data) {
+      let presenceList = data.presenceList;
+      let students = data.students;
+      let flashMessages = Ember.get(this, 'flashMessages');
+      let promises = [];
+
+      presenceList.save().then(() => {
+        students.forEach((student) => {
+          promises.push(student.save());
+        });
+      });
+
+      return RSVP.all(promises).then(() => {
+        this.transitionTo('courses.presence-lists.index');
+        flashMessages.success('Pomyślnie zapisano listę');
+      });
+    }
   }
 });
