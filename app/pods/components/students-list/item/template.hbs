@@ -10,7 +10,7 @@
   {{/unless}}
 </td>
 <td>{{#if student.acceptedTerms}}Tak{{else}}Nie <button {{action "addTermsAccepted" student}} class="btn btn-primary btn-xs">+</button>{{/if}}</td>
-<td>{{link-to "Zobacz" 'students.show' student class="btn btn-primary btn-sm"}}</td>
+<td>{{link-to "Zobacz" 'students.show' student.id class="btn btn-primary btn-sm"}}</td>
 <td>{{link-to "Edytuj" 'students.edit' student.id class="btn btn-default btn-sm"}}</td>
 <td>
   <button class="btn btn-danger btn-sm" {{action 'deleteStudent' student}}>Usuń</button>

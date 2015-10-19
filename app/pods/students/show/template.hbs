@@ -1,7 +1,7 @@
-<h2>Uczestnik: {{model.name}} {{model.surname}}</h2>
+<h2>Uczestnik: {{student.name}} {{student.surname}}</h2>
 <p>
 	{{link-to 'Back' 'students.index' class="btn btn-default"}}
-	{{link-to 'Edit' 'students.edit' model.id class='btn btn-primary'}}
+	{{link-to 'Edit' 'students.edit' student.id class='btn btn-primary'}}
 </p>
 
 <div class="panel panel-default">
@@ -9,10 +9,12 @@
 		Student details
 	</div>
 	<div class="panel-body">
-		<p><b>Phone Nr:</b> {{model.phone_nr}}</p>
-		<p><b>Address:</b> {{model.address}}</p>
+		<p><b>Phone Nr:</b> {{student.phone_nr}}</p>
+		<p><b>Address:</b> {{student.address}}</p>
 		<p>
-			<b>Group:</b> {{model.studentGroup.name}}
+			<b>Group:</b> {{student.studentGroup.name}}
 		</p>
+		<hr />
+	  {{presence-indicator student=student}}
 	</div>
 </div>

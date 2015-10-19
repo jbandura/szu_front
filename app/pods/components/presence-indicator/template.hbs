@@ -1,0 +1,19 @@
+<h3>Presences</h3>
+{{#if isLoaded}}
+  <div class="row">
+    <div class="col-md-4">
+      <h4>This month</h4>
+      {{presencesThisMonth}}
+    </div>
+    <div class="col-md-4">
+      <h4>This year</h4>
+      {{presencesThisYear}}
+    </div>
+    <div class="col-md-4">
+      <h4>Total</h4>
+      {{presencesTotal}}
+    </div>
+  </div>
+{{else}}
+  <div class="alert alert-info">Loading data ...</div>
+{{/if}}

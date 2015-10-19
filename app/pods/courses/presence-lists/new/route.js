@@ -26,10 +26,10 @@ export default Route.extend({
       let students = data.students;
       let presenceList = data.presenceList;
       presenceList.save().then(() => {
-        students.forEach((student) => {
-          student.presenceList = presenceList;
+        students.forEach((presence) => {
+          presence.set('presenceList', presenceList);
           promises.push(
-            this.store.createRecord('presence', student).save()
+            this.store.createRecord('presence', presence.getProperties('student', 'isPresent', 'presenceList')).save()
           );
         });
         return RSVP.all(promises).then(() => {
