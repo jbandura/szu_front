@@ -1,0 +1,22 @@
+.user-info {
+  text-align: right;
+  display: table;
+
+  &__text {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: $fs-2;
+
+    a,
+    a:hover,
+    a:visited,
+    a:focus {
+      color: $white-color;
+    }
+  }
+
+  &__avatar {
+    @include sizing(80px);
+    border: 5px solid $white-color;
+  }
+}

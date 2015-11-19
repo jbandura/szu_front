@@ -18,7 +18,26 @@
 	</div>
 </div>
 
-<div class="container">
+<div class="container app-container title-container">
+	<div class="row">
+		<div class="col-md-6">
+			<h1 class="page-title">Title</h1>
+		</div>
+		<div class="col-md-6">
+			<div class="media user-info">
+				<div class="media-body user-info__text">
+			    <p class="text-size-2">Welcome <b>Jacek Bandura</b>!</p>
+					<p class="text-size-1"><a href="#">Settings</a> | <a href="#">Logout</a></p>
+				</div>
+				<div class="media-right">
+					<img src="http://www.gravatar.com/avatar/54efdbeb109f5de8fc9df75000534e3e?size=120" alt="" class="user-info__avatar" />
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container app-container">
   {{#each flashMessages.queue as |flash|}}
     {{flash-message flash=flash}}
   {{/each}}

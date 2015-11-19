@@ -1,0 +1,26 @@
+.side-nav-container {
+  padding-right: 0;
+}
+
+.side-nav {
+
+  .list-group-item,
+  .list-group-item:hover {
+    padding: 20px 20px 20px 50px;
+    font-size: $fs-3;
+    font-weight: $fw-normal;
+    background-color: $side-nav-color;
+    border: 1px solid $side-nav-border-color;
+    border-right: 4px solid $side-nav-active-color;
+    border-radius: 0;
+    cursor: pointer;
+
+    &.active,
+    &:hover {
+      padding-right: 24px;
+      color: $white-color;
+      background-color: $side-nav-active-color;
+      border-right: 0;
+    }
+  }
+}

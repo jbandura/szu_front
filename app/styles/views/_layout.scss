@@ -1,0 +1,40 @@
+body {
+  position: relative;
+
+  &:after {
+    @include sizing(100% 250px);
+    @include absolute(top 0 left 0);
+    content: '';
+    z-index: $z-index-0;
+    background-color: $dark-gray-1-color;
+  }
+}
+
+.app-container {
+  position: relative;
+  z-index: $z-index-1;
+}
+
+.content-container {
+  background-color: $white-color;
+}
+
+.site-header {
+  position: relative;
+  padding: 20px;
+  z-index: $z-index-1;
+  color: $white-color;
+  background-color: $dark-gray-2-color;
+}
+
+.title-container {
+  position: relative;
+  padding-top: 30px;
+  height: 144px;
+  color: $white-color;
+}
+
+.page-title {
+  font-size: $fs-4;
+  font-weight: $fw-light;
+}
