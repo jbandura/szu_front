@@ -8,7 +8,7 @@ export default Component.extend(EmberValidations, {
   groups: null, //passed in
   studentGroup: computed.alias('model.studentGroup'),
   groupChosen: computed('model.studentGroup', function() {
-    return this.get('studentGroup');  
+    return this.get('studentGroup');
   }),
   isButtonDisabled: computed('isValid', 'groupChosen', function() {
     return !this.get('isValid') || !this.get('groupChosen');
@@ -28,10 +28,10 @@ export default Component.extend(EmberValidations, {
 
   actions: {
     save() {
-      this.sendAction('save', this.get('model'));
+      this.attrs.save(this.get('model'));
     },
     cancel() {
-      this.sendAction('cancel');
+      this.attrs.cancel();
     }
   }
 });

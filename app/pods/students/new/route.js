@@ -15,20 +15,5 @@ export default Route.extend({
     if(model.get('isNew')) {
       model.destroyRecord();
     }
-  },
-
-  actions: {
-    createStudent(student) {
-      const flashMessages = Ember.get(this, 'flashMessages');
-
-      student.save().then(() => {
-        this.transitionTo('students.index');
-        flashMessages.success('Student was successfully saved!');
-      });
-    },
-
-    goBack() {
-      this.transitionTo('students.index');
-    }
   }
 });

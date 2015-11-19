@@ -5,6 +5,6 @@
 {{student-form
   model=model.student
   groups=model.groups
-  save="createStudent"
-  cancel="goBack"
+  save=(action "createStudent")
+  cancel=(action "goBack")
 }}
