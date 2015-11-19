@@ -26,11 +26,11 @@ export default Model.extend({
     return `${this.get('street')}, ${this.get('city')} ${country}`;
   }),
 
-  paymentCurrentMonth: computed("payments.@each.month_nr", "payments.@each.year_nr", function() {
-    let month_nr = parseInt(moment().format('M'));
-    let year_nr = parseInt(moment().format('YYYY'));
+  paymentCurrentMonth: computed("payments.@each.monthNr", "payments.@each.yearNr", function() {
+    let monthNr = parseInt(moment().format('M'));
+    let yearNr = parseInt(moment().format('YYYY'));
     return this.get('payments').find((payment) => {
-      return payment.get('month_nr') === month_nr && payment.get('year_nr') === year_nr;
+      return payment.get('monthNr') === monthNr && payment.get('yearNr') === yearNr;
     });
   })
 });
