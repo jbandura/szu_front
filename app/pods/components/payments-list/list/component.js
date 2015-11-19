@@ -5,6 +5,7 @@ const { Component, computed } = Ember;
 
 export default Component.extend(FilterableMixin, {
   changedPayment: false,
+  showFilter: false, //passed in
   filteredPayments: computed('filter', 'changedPayment', function() {
     let payments = this.get('model');
     let changedPayment = this.get('changedPayment');

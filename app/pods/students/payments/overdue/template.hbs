@@ -1,7 +1,10 @@
-<h2>Overdue payments</h2>
+{{container-header title="Overdue payments" showFilter=(action "toggleFilter")}}
 
-{{payments-list/list
-  model=model
-  addPayment=(action "addPayment")
-  deletePayment=(action "deletePayment")
-}}
+<div class="container-content">
+  {{payments-list/list
+    model=model
+    addPayment=(action "addPayment")
+    deletePayment=(action "deletePayment")
+    showFilter=filterVisible
+  }}
+</div>

@@ -1,13 +1,14 @@
-{{input value=filter class="form-control"}}
-
+{{#if showFilter}}
+{{input value=filter class="form-control" placeholder="Search by name"}}
 <hr>
+{{/if}}
 
-<table class="table table-bordered">
+<table class="table">
 <thead>
 	<tr>
-		<th>Uczestnik</th>
-		<th>Miesiąc i rok</th>
-		<th colspan="2"></th>
+		<th>Student</th>
+		<th>Month and year</th>
+		<th colspan="2">Actions</th>
 	</tr>
 </thead>
 <tbody>
