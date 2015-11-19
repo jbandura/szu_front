@@ -1,18 +1,18 @@
-<table class="table table-bordered">
+<table class="table">
 	<thead>
 		<tr>
 			<th></th>
-			<th>Nazwa grupy</th>
-			<th colspan="2"></th>
+			<th>Group name</th>
+			<th colspan="2">Actions</th>
 		</tr>
 	</thead>
 	<tbody>
 		{{#each group in groups}}
 		<tr>
-			<td class="text-center"><i class="fa fa-users"></i></td>
+			<td class="text-center"><i class="fa fa-users text-muted"></i></td>
 			<td>{{group.name}}</td>
-			<td>{{link-to 'Edytuj' 'students.groups.edit' group class='btn btn-default btn-sm'}}</td>
-			<td><button class="btn btn-danger btn-sm" {{action "deleteGroup" group}}>Usuń</button></td>
+			<td>{{link-to 'Edit' 'students.groups.edit' group class='btn btn-default btn-sm'}}</td>
+			<td><button class="btn btn-danger btn-sm" {{action "deleteGroup" group}}>Delete</button></td>
 		</tr>
 		{{/each}}
 	</tbody>

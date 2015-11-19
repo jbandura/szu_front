@@ -1,7 +1,9 @@
-<h2>Grupy</h2>
+{{#container-header title="Groups" filterable=false}}
+	{{#link-to 'students.groups.new' class="container-header__link"}}
+		<i class="fa fa-plus-circle"></i> Add
+	{{/link-to}}
+{{/container-header}}
 
-<p>
-	{{link-to 'Dodaj nową grupę' 'students.groups.new' class="btn btn-primary"}}
-</p>
-
-{{groups-list groups=model}}
+<div class="container-content">
+	{{groups-list groups=model}}
+</div>

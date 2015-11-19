@@ -1,9 +1,13 @@
-<h2>Dodaj nową grupę</h2>
+{{#container-header title="Add new group" filterable=false}}
+	{{#link-to 'students.groups.index' class="container-header__link"}}
+		<i class="fa fa-arrow-circle-left"></i> Go back
+	{{/link-to}}
+{{/container-header}}
 
-<p>{{link-to 'Powrót' 'students.groups.index' class='btn btn-default'}}</p>
-
-{{group-form
-  model=model
-  save="addGroup"
-  cancel="goBack"
-}}
+<div class="container-content">
+  {{group-form
+    model=model
+    save="addGroup"
+    cancel="goBack"
+  }}
+</div>
