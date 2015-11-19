@@ -18,11 +18,11 @@
 // $gray-light:             lighten(#000, 46.7%) !default; // #777
 // $gray-lighter:           lighten(#000, 93.5%) !default; // #eee
 
-// $brand-primary:         #428bca !default;
+$brand-primary:         $side-nav-color;
 // $brand-success:         #5cb85c !default;
 // $brand-info:            #5bc0de !default;
 // $brand-warning:         #f0ad4e !default;
-// $brand-danger:          #d9534f !default;
+$brand-danger:          $red-color;
 
 
 //== Scaffolding
@@ -149,8 +149,8 @@ $font-family-sans-serif:  $ff-sans-serif;
 
 // $btn-font-weight:                normal !default;
 
-// $btn-default-color:              #333 !default;
-// $btn-default-bg:                 #fff !default;
+$btn-default-color:              $gray-3-color;
+$btn-default-bg:                 $light-gray-color;
 // $btn-default-border:             #ccc !default;
 
 // $btn-primary-color:              #fff !default;

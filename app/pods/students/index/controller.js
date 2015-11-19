@@ -3,7 +3,12 @@ import Ember from 'ember';
 const { Controller } = Ember;
 
 export default Controller.extend({
+  filterVisible: false,
   actions: {
+    toggleFilter() {
+      this.toggleProperty('filterVisible');
+    },
+
     addTermsAccepted: function(student) {
       let flashMessage = Ember.get(this, 'flashMessages');
       student.set('acceptedTerms', true);

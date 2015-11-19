@@ -1,28 +1,32 @@
-{{log students}}
-<div class="row">
-	<div class="col-md-4">
-		{{input value=filter class="form-control"}}
-	</div>
-	<div class="col-md-3">
-		<div class="checkbox">
-			<label>
-				{{input type="checkbox" checked=terms}}
-				Bez oddanego regulaminu
-			</label>
+{{#if showFilter}}
+
+	<div class="row">
+		<div class="col-md-4">
+			{{input value=filter class="form-control" placeholder="Search by name"}}
+		</div>
+		<div class="col-md-3 text-center">
+			<div class="checkbox">
+				<label>
+					{{input type="checkbox" checked=terms}}
+					Terms not accepted
+				</label>
+			</div>
+		</div>
+		<div class="col-md-5 form-inline">
+			<div class="form-group">
+				<label>Group:</label>
+				<select onchange={{action 'groupSelected' value="target.value"}} class="form-control">
+					<option value="all">All</option>
+					{{#each group in groups}}
+					<option value="{{group.id}}">{{group.name}}</option>
+					{{/each}}
+				</select>
+			</div>
 		</div>
 	</div>
-	<div class="col-md-3 form-inline">
-		<label>Grupa:</label>
-		<select onchange={{action 'groupSelected' value="target.value"}} class="form-control">
-			<option value="all">Wszystkie</option>
-			{{#each group in groups}}
-			<option value="{{group.id}}">{{group.name}}</option>
-			{{/each}}
-		</select>
-	</div>
-</div>
 
 <hr>
+{{/if}}
 
 <table class="table">
 	<thead>

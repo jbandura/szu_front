@@ -1,0 +1,26 @@
+.container-header {
+  padding: 15px;
+  border-bottom: 1px solid $gray-1-color;
+
+  &__title {
+    margin: 0;
+    font-size: $fs-3;
+    font-weight: $fw-normal;
+    color: $gray-2-color;
+  }
+
+  &__links {
+    font-size: $fs-1;
+    text-transform: uppercase;
+    text-align: right;
+  }
+
+  &__link {
+    margin-left: 10px;
+
+    &--filter,
+    &--filter:hover {
+      color: $gray-2-color;
+    }
+  }
+}

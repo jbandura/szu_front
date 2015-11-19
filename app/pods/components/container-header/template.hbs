@@ -1,0 +1,15 @@
+<div class="container-header">
+	<div class="row">
+		<div class="col-md-6">
+			<h2 class="container-header__title">{{title}}</h2>
+		</div>
+		<div class="col-md-6 container-header__links">
+      {{yield}}
+      {{#if filterable}}
+  			<a href="#" {{action "toggleFilter"}} class="container-header__link container-header__link--filter">
+  				<i class="fa fa-filter"></i> Filter
+  			</a>
+      {{/if}}
+		</div>
+	</div>
+</div>

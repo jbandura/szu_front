@@ -19,6 +19,10 @@ body {
   background-color: $white-color;
 }
 
+.content-row {
+  padding-left: 0;
+}
+
 .site-header {
   position: relative;
   padding: 20px;
@@ -37,4 +41,8 @@ body {
 .page-title {
   font-size: $fs-4;
   font-weight: $fw-light;
+}
+
+.container-content {
+  padding: 15px;
 }

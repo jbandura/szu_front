@@ -1,12 +1,17 @@
-<h2>Uczestnicy</h2>
+{{#container-header title="Students" showFilter=(action "toggleFilter")}}
+	{{#link-to 'students.new' class="container-header__link"}}
+	  <i class="fa fa-plus-circle"></i> Add
+	{{/link-to}}
+{{/container-header}}
 
-<p>
-	{{link-to 'Dodaj nowego uczestnika' 'students.new' class="btn btn-primary"}}
-</p>
-{{students-list/list
-	students=model.students
-	groups=model.groups
-	addPayment=(action "addPayment")
-	addTermsAccepted=(action "addTermsAccepted")
-	deleteStudent=(action "deleteStudent")
-}}
+
+<div class="container-content">
+	{{students-list/list
+		students=model.students
+		groups=model.groups
+		addPayment=(action "addPayment")
+		addTermsAccepted=(action "addTermsAccepted")
+		deleteStudent=(action "deleteStudent")
+		showFilter=filterVisible
+	}}
+</div>

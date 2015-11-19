@@ -7,6 +7,7 @@ export default Component.extend(FilterableMixin, {
   students: [], //passed in
   groups: [], //passed in
   selectedGroup: 'all',
+  showFilter: null, //passed in
   terms: false,
   filteredStudents: computed("students.@each", "filter", "terms", "selectedGroup", function () {
     let students = this.get('students');
@@ -35,6 +36,6 @@ export default Component.extend(FilterableMixin, {
     groupSelected: function() {
       let selectedGroup = this.$('select').val();
       this.set('selectedGroup', selectedGroup);
-    }  
+    }
   }
 });
