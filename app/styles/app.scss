@@ -1,7 +1,14 @@
-@import 'custom-variables';
+@import 'settings/z-index-variables';
+@import 'settings/variables';
+@import 'framework/variables';
 
-@import 'settings/bootstrap-variables';
-@import 'settings/bootstrap-components';
+@import 'framework/components';
 
-@import 'bootstrap-overrides';
-@import 'application';
+@import 'settings/breakpoint-variables';
+
+@import 'utilities/functions';
+@import 'utilities/mixins';
+@import 'utilities/shared';
+@import 'utilities/typography';
+
+@import 'framework/overrides';
