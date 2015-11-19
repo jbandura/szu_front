@@ -1,10 +1,14 @@
-<h2>Edytowanie uczestnika</h2>
-<p>
-	{{link-to "Powrót" "students.index" class="btn btn-default"}}
-</p>
-{{student-form
-  model=model.student
-  groups=model.groups
-  save=(action "saveChanges")
-  cancel=(action "goBack")
-}}
+{{#container-header title="Edit student" filterable=false}}
+	{{#link-to 'students.index' class="container-header__link"}}
+	  <i class="fa fa-arrow-circle-left"></i> Go back
+	{{/link-to}}
+{{/container-header}}
+
+<div class="container-content">
+	{{student-form
+	  model=model.student
+	  groups=model.groups
+	  save=(action "saveChanges")
+	  cancel=(action "goBack")
+	}}
+</div>

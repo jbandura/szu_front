@@ -1,30 +1,28 @@
-<h2>Uczestnik: {{model.name}} {{model.surname}}</h2>
-<p>
-	{{link-to 'Back' 'students.index' class="btn btn-default"}}
-	{{link-to 'Edit' 'students.edit' model.id class='btn btn-primary'}}
-</p>
+{{#container-header title="Student details" filterable=false}}
+	{{#link-to 'students.edit' model.id class='container-header__link'}}
+	  <i class="fa fa-pencil-square"></i> Edit
+	{{/link-to}}
+	{{#link-to 'students.index' class='container-header__link'}}
+	  <i class="fa fa-arrow-circle-left"></i> Back
+	{{/link-to}}
+{{/container-header}}
 
-<div class="panel panel-default">
-	<div class="panel-heading">
-		Student details
-	</div>
-	<div class="panel-body">
-		<p><b>Phone Nr:</b> {{model.phone_nr}}</p>
-		<p><b>Address:</b> {{model.address}}</p>
-		<p>
-			<b>Group:</b> {{model.studentGroup.name}}
-		</p>
-		<hr />
-		<div class="row">
-      <div class="col-md-6">{{presence-indicator student=model}}</div>
-      <div class="col-md-6">
-				Payment status:
-				{{#if model.hasUnpaidPayments}}
-				  <span class="text-danger">overdue</span>
-				{{else}}
-				  <span class="text-success">paid</span>
-				{{/if}}
-			</div>
+<div class="container-content">
+	<p><b>Phone Nr:</b> {{model.phone_nr}}</p>
+	<p><b>Address:</b> {{model.address}}</p>
+	<p>
+		<b>Group:</b> {{model.studentGroup.name}}
+	</p>
+	<hr />
+	<div class="row">
+	  <div class="col-md-6">{{presence-indicator student=model}}</div>
+	  <div class="col-md-6">
+			Payment status:
+			{{#if model.hasUnpaidPayments}}
+			  <span class="text-danger">overdue</span>
+			{{else}}
+			  <span class="text-success">paid</span>
+			{{/if}}
 		</div>
 	</div>
 </div>

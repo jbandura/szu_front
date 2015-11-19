@@ -4,12 +4,12 @@
 <td>{{student.phone_nr}}</td>
 <td>
   {{#unless student.paymentCurrentMonth.paid}}
-    Nie <button {{action 'addPayment' student}} class="btn btn-primary btn-xs">+</button>
+    Nie <button {{action 'addPayment' student}} class="btn btn-primary btn-sm">+</button>
   {{else}}
     Tak
   {{/unless}}
 </td>
-<td>{{#if student.acceptedTerms}}Tak{{else}}Nie <button {{action "addTermsAccepted" student}} class="btn btn-primary btn-xs">+</button>{{/if}}</td>
+<td>{{#if student.acceptedTerms}}Tak{{else}}Nie <button {{action "addTermsAccepted" student}} class="btn btn-primary btn-sm">+</button>{{/if}}</td>
 <td>{{link-to "Zobacz" 'students.show' student.id class="btn btn-primary btn-sm"}}</td>
 <td>{{link-to "Edytuj" 'students.edit' student.id class="btn btn-default btn-sm"}}</td>
 <td>

@@ -1,7 +1,11 @@
 .btn {
-  padding: 3px 10px;
+  padding: 10px 15px;
   font-size: 12px;
   font-weight: $fw-normal;
   text-transform: uppercase;
   box-shadow: 0 2px 0 $light-gray-color;
+
+  &-sm {
+    padding: 3px 10px;
+  }
 }
