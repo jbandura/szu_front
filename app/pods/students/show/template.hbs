@@ -15,6 +15,16 @@
 			<b>Group:</b> {{model.studentGroup.name}}
 		</p>
 		<hr />
-	  {{presence-indicator student=model}}
+		<div class="row">
+      <div class="col-md-6">{{presence-indicator student=model}}</div>
+      <div class="col-md-6">
+				Payment status:
+				{{#if model.hasUnpaidPayments}}
+				  <span class="text-danger">overdue</span>
+				{{else}}
+				  <span class="text-success">paid</span>
+				{{/if}}
+			</div>
+		</div>
 	</div>
 </div>

@@ -32,5 +32,10 @@ export default Model.extend({
     return this.get('payments').find((payment) => {
       return payment.get('monthNr') === monthNr && payment.get('yearNr') === yearNr;
     });
+  }),
+
+  hasUnpaidPayments: computed('payments.@each.paid', function() {
+    let unpaid = this.get('payments').filterBy('paid', false);
+    return unpaid.length !== 0;
   })
 });
